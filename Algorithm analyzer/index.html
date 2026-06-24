@@ -1,0 +1,69 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoViz - Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AlgoViz</h1>
+            <p>Interactive Algorithm Visualizer</p>
+        </header>
+
+        <div class="controls">
+            <div class="algorithm-select">
+                <label for="algorithm">Select Algorithm:</label>
+                <select id="algorithm">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="binary">Binary Search</option>
+                </select>
+            </div>
+
+            <div class="array-controls">
+                <button id="generate">Generate New Array</button>
+                <label for="size">Size: <span id="sizeValue">20</span></label>
+                <input type="range" id="size" min="5" max="50" value="20">
+            </div>
+
+            <div class="speed-controls">
+                <label for="speed">Speed: <span id="speedValue">Medium</span></label>
+                <input type="range" id="speed" min="1" max="100" value="50">
+            </div>
+
+            <div class="action-buttons">
+                <button id="start" class="primary">Start</button>
+                <button id="pause" class="secondary">Pause</button>
+                <button id="stop" class="danger">Stop</button>
+            </div>
+        </div>
+
+        <div class="visualization">
+            <div id="bars" class="bars"></div>
+            <div id="binary-info" class="binary-info hidden">
+                <div>Low: <span id="low">0</span></div>
+                <div>Mid: <span id="mid">0</span></div>
+                <div>High: <span id="high">0</span></div>
+                <div>Target: <span id="target">42</span></div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div>Comparisons: <span id="comparisons">0</span></div>
+            <div>Swaps: <span id="swaps">0</span></div>
+            <div>Time: <span id="time">0.00</span>s</div>
+        </div>
+
+        <div class="info">
+            <h3 id="algo-title">Bubble Sort</h3>
+            <p id="algo-desc">Bubble Sort repeatedly steps through the list, compares adjacent elements and swaps them if they are in wrong order.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
